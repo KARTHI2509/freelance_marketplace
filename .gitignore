@@ -1,0 +1,32 @@
+# Python cache and compiled files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# Environment files (sensitive keys)
+.env
+.env.local
+
+# Database
+*.sqlite3
+db.sqlite3
+
+# Static / Media directories
+staticfiles/
+media/
+
+# IDE and OS files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Temporary scripts
+setup_git.bat

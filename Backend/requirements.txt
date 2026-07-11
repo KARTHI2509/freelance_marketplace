@@ -1,0 +1,8 @@
+django
+pymongo[srv]
+dnspython
+python-dotenv
+django-cors-headers
+gunicorn
+whitenoise
+djangorestframework

@@ -1,0 +1,63 @@
+<!DOCTYPEhtml>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Place Proposal - GigFlex</title>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <nav class="navbar">
+            <h2><a href="index.html"><i class="fa-solid fa-briefcase"></i> GigFlex</a></h2>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main style="display: flex; align-items: center; justify-content: center;">
+        <section class="form-section" style="max-width: 600px;">
+            <h2>Submit Project Bid</h2>
+            <form id="bidForm" onsubmit="handleBidSubmit(event)" style="margin-top: 20px;">
+                <div class="form-group">
+                    <label for="bidProjectTitle">Project Title</label>
+                    <div class="input-wrapper">
+                        <i class="fa-solid fa-heading"></i>
+                        <input type="text" id="bidProjectTitle" readonly style="background-color: #F1F5F9; color: var(--text-muted);">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="bidAmount">Bid Budget Amount ($) *</label>
+                    <div class="input-wrapper">
+                        <i class="fa-solid fa-dollar-sign"></i>
+                        <input type="number" id="bidAmount" placeholder="Enter bid budget (e.g. 45000)" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="bidProposal">Proposal Description *</label>
+                    <textarea id="bidProposal" placeholder="Describe your experience, approach to solving the problem, and why the client should select you..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn" style="width: 100%; display: justify-content; justify-content: center;">
+                    <i class="fa-solid fa-paper-plane"></i> Submit Proposal
+                </button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-bottom">
+            <p>&copy; 2026 GigFlex Freelance Platform. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

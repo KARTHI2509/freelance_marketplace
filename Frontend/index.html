@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GigFlex - Freelance Marketplace</title>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <nav class="navbar">
+            <h2><a href="index.html"><i class="fa-solid fa-briefcase"></i> GigFlex</a></h2>
+
+            <button class="hamburger-menu" aria-label="Toggle Menu" onclick="toggleMobileMenu()">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="active">Home</a></li>
+                <!-- Dynamic links inserted by JS -->
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1 class="anim-fade-up">Find Expert Freelancers for Your Projects</h1>
+        <p class="anim-fade-up">Connect with top developers, designers, copywriters, and digital marketers worldwide to scale your business operations instantly.</p>
+        <div style="display: flex; gap: 15px; margin-top: 15px;">
+            <a href="projects.html" class="btn anim-fade-up">
+                <i class="fa-solid fa-magnifying-glass"></i> Browse Projects
+            </a>
+            <a href="register.html" class="btn btn-secondary anim-fade-up">
+                Join as Freelancer / Client
+            </a>
+        </div>
+    </section>
+
+    <!-- Search & Filters -->
+    <section class="featured" id="searchSection" style="padding-bottom: 20px;">
+        <h2>Explore Talents & Projects</h2>
+        <div class="form-group" style="max-width: 600px; margin-top: 20px; display: flex; gap: 15px;">
+            <div class="input-wrapper" style="flex: 1;">
+                <i class="fa-solid fa-search"></i>
+                <input
+                    type="text"
+                    id="searchQuery"
+                    placeholder="Search by Title, Skills, Client, or Category..."
+                    style="padding-left: 44px;"
+                    onkeyup="handleSearch(event)"
+                >
+            </div>
+            <button class="btn" onclick="triggerSearch()" style="padding: 14px 24px;">
+                Search
+            </button>
+        </div>
+    </section>
+
+    <!-- Freelancers Section -->
+    <section class="featured" id="freelancersSection" style="padding-top: 10px;">
+        <h2>Top Skilled Freelancers</h2>
+        <div class="grid-container" id="freelancerList" style="margin-top: 30px;">
+            <!-- Freelancers dynamically rendered by script.js -->
+        </div>
+    </section>
+
+    <!-- Featured Projects Section -->
+    <section class="featured" style="padding-top: 10px; margin-bottom: 60px;">
+        <h2>Featured Client Projects</h2>
+        <div class="grid-container" id="featuredProjectsList" style="margin-top: 30px;">
+            <!-- Projects dynamically rendered by script.js -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>GigFlex</h3>
+                <p>Hire verified experts for short-term and contract projects. Streamlined bidding, secure contracts, and active project history logs.</p>
+                <div class="footer-social">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Freelancer portal</h3>
+                <ul class="footer-links">
+                    <li><a href="projects.html">Find Work</a></li>
+                    <li><a href="dashboard.html">My Bids & Proposals</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p><i class="fa-solid fa-location-dot"></i> Tech Park Sector, Hyderabad, India</p>
+                <p><i class="fa-solid fa-phone"></i> +91 99887 76655</p>
+                <p><i class="fa-solid fa-envelope"></i> support@gigflex.com</p>
+            </div>
+            <div class="footer-section">
+                <h3>Newsletter</h3>
+                <p>Subscribe to receive news, premium deals, and special discounts.</p>
+                <div class="newsletter-form" style="display: flex; gap: 8px;">
+                    <input type="email" placeholder="Your Email Address" style="padding: 10px; border-radius: 4px; border: 1px solid rgba(0,0,0,0.1); background: rgba(255,255,255,0.7); flex: 1;">
+                    <button class="btn" style="padding: 10px 15px;"><i class="fa-solid fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 GigFlex Freelance Platform. All Rights Reserved.</p>
+            <p style="margin-top: 8px; font-weight: 500; opacity: 0.85;">Developed by <span style="background: var(--primary-gradient); -webkit-background-clip: text; background-clip: text; color: transparent; font-weight: 700;">Karthi</span></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

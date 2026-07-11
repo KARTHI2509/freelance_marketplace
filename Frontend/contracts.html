@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contracts - GigFlex</title>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <nav class="navbar">
+            <h2><a href="index.html"><i class="fa-solid fa-briefcase"></i> GigFlex</a></h2>
+
+            <button class="hamburger-menu" aria-label="Toggle Menu" onclick="toggleMobileMenu()">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <!-- Dynamic links inserted by JS -->
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="featured" style="margin-bottom: 60px;">
+        <h2>Project Contracts</h2>
+        
+        <div class="table-wrapper" style="margin-top: 30px;">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Contract ID</th>
+                        <th>Project</th>
+                        <th>Client</th>
+                        <th>Freelancer</th>
+                        <th>Budget</th>
+                        <th>Start Date</th>
+                        <th>End Date</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="contractsListTable">
+                    <!-- Dynamic rendering -->
+                    <tr>
+                        <td colspan="9" class="no-records" style="padding: 40px;">
+                            <i class="fa-solid fa-file-contract"></i> Loading contracts...
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-bottom">
+            <p>&copy; 2026 GigFlex Freelance Platform. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

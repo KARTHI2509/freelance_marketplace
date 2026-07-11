@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Projects - GigFlex</title>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <nav class="navbar">
+            <h2><a href="index.html"><i class="fa-solid fa-briefcase"></i> GigFlex</a></h2>
+
+            <button class="hamburger-menu" aria-label="Toggle Menu" onclick="toggleMobileMenu()">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <!-- Dynamic links inserted by JS -->
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content Layout -->
+    <main class="featured" style="margin-bottom: 60px;">
+        <div class="admin-layout">
+            <!-- Left Column: Post project form (Visible to clients only) -->
+            <div class="glass-card" id="projectPostPanel" style="padding: 24px; display: none;">
+                <h3 style="font-size: 22px; margin-bottom: 20px;"><i class="fa-solid fa-circle-plus"></i> Post New Project</h3>
+                <form id="projectForm" onsubmit="handleProjectFormSubmit(event)">
+                    <div class="form-group">
+                        <label for="projTitle">Project Title *</label>
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-heading"></i>
+                            <input type="text" id="projTitle" placeholder="e.g. E-Commerce Website" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="projDesc">Project Description *</label>
+                        <textarea id="projDesc" placeholder="Describe project goals, features, and expectations..." required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="projCat">Category *</label>
+                        <select id="projCat" style="padding-left: 16px;" required>
+                            <option value="Web Development">Web Development</option>
+                            <option value="Mobile Development">Mobile Development</option>
+                            <option value="Graphic Design">Graphic Design</option>
+                            <option value="Content Writing">Content Writing</option>
+                            <option value="Digital Marketing">Digital Marketing</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="projBudget">Project Budget ($) *</label>
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-dollar-sign"></i>
+                            <input type="number" id="projBudget" placeholder="e.g. 50000" min="1" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="projDeadline">Project Deadline *</label>
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-calendar-days"></i>
+                            <input type="date" id="projDeadline" required>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn" style="width: 100%; justify-content: center;">
+                        Post Project
+                    </button>
+                </form>
+            </div>
+
+            <!-- Right Column: Active project listings list -->
+            <div style="grid-column: 1 / -1;" id="projectListWrapper">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px;">
+                    <h2>Active Projects</h2>
+                    <!-- Category filter -->
+                    <select id="categoryFilter" onchange="filterProjectsByCategory()" style="padding: 10px; border-radius: 8px; border: var(--border-glass); max-width: 250px;">
+                        <option value="All">All Categories</option>
+                        <option value="Web Development">Web Development</option>
+                        <option value="Mobile Development">Mobile Development</option>
+                        <option value="Graphic Design">Graphic Design</option>
+                        <option value="Content Writing">Content Writing</option>
+                        <option value="Digital Marketing">Digital Marketing</option>
+                    </select>
+                </div>
+
+                <div class="grid-container" id="projectListGrid">
+                    <!-- Dynamic rendering -->
+                    <div class="no-records"><i class="fa-solid fa-folder-open"></i> Loading available projects...</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-bottom">
+            <p>&copy; 2026 GigFlex Freelance Platform. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Profile - GigFlex</title>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <nav class="navbar">
+            <h2><a href="index.html"><i class="fa-solid fa-briefcase"></i> GigFlex</a></h2>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main style="display: flex; align-items: center; justify-content: center;">
+        <section class="form-section" style="max-width: 600px;">
+            <h2>Register Profile</h2>
+            
+            <div class="form-group" style="margin-bottom: 25px;">
+                <label for="regRole">Choose Registration Role *</label>
+                <select id="regRole" onchange="toggleRegistrationFields()" style="padding-left: 16px;">
+                    <option value="freelancer">Join as a Freelancer</option>
+                    <option value="client">Join as a Client Company</option>
+                </select>
+            </div>
+
+            <form id="registerForm" onsubmit="handleRegisterSubmit(event)">
+                <!-- Shared contact fields -->
+                <div class="form-group">
+                    <label for="regEmail">Email Address *</label>
+                    <div class="input-wrapper">
+                        <i class="fa-solid fa-envelope"></i>
+                        <input type="email" id="regEmail" placeholder="Enter professional email" required autocomplete="email">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="regPhone">Phone Number *</label>
+                    <div class="input-wrapper">
+                        <i class="fa-solid fa-phone"></i>
+                        <input type="tel" id="regPhone" placeholder="Enter contact number" required>
+                    </div>
+                </div>
+
+                <!-- Freelancer-Specific Fields Section -->
+                <div id="freelancerFields">
+                    <h3 style="font-size: 16px; margin: 25px 0 15px 0; border-bottom: 1px solid #E2E8F0; padding-bottom: 8px; color: var(--primary);">Freelance Professional Details</h3>
+                    <div class="form-group">
+                        <label for="freeName">Full Name *</label>
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-user"></i>
+                            <input type="text" id="freeName" placeholder="Rahul Sharma">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="freeSkills">Skills (Comma Separated) *</label>
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-code"></i>
+                            <input type="text" id="freeSkills" placeholder="e.g. React, Django, Python">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="freeExp">Years of Experience *</label>
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                            <input type="number" id="freeExp" placeholder="e.g. 3" min="0">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="freeRate">Hourly Rate ($) *</label>
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-dollar-sign"></i>
+                            <input type="number" id="freeRate" placeholder="e.g. 20" min="1">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Client-Specific Fields Section -->
+                <div id="clientFields" style="display: none;">
+                    <h3 style="font-size: 16px; margin: 25px 0 15px 0; border-bottom: 1px solid #E2E8F0; padding-bottom: 8px; color: var(--primary);">Client Company Details</h3>
+                    <div class="form-group">
+                        <label for="clientCompany">Company Name *</label>
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-building"></i>
+                            <input type="text" id="clientCompany" placeholder="e.g. Tech Solutions Pvt Ltd">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="clientContact">Contact Person Name *</label>
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-user-tie"></i>
+                            <input type="text" id="clientContact" placeholder="e.g. Anjali Verma">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="clientLoc">Company Location *</label>
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <input type="text" id="clientLoc" placeholder="e.g. Bangalore, Hyderabad">
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn" style="width: 100%; display: justify-content; justify-content: center; margin-top: 15px;">
+                    <i class="fa-solid fa-circle-check"></i> Register Profile
+                </button>
+            </form>
+
+            <div class="form-footer">
+                <p>Already registered? <a href="login.html">Sign In</a></p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-bottom">
+            <p>&copy; 2026 GigFlex Freelance Platform. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
